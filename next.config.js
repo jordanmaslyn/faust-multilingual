@@ -1,6 +1,18 @@
-const { withFaust } = require('@faustjs/next');
+const { withFaust } = require("@faustjs/next");
 
 /**
  * @type {import('next').NextConfig}
  **/
-module.exports = withFaust();
+module.exports = withFaust({
+  images: {
+    domains: ["multilingual.local"],
+  },
+  i18n: {
+    // These are all the locales you want to support in
+    // your application
+    locales: ["en", "es", "pl"],
+    // This is the default locale you want to be used when visiting
+    // a non-locale prefixed path e.g. `/hello`
+    defaultLocale: "en",
+  },
+});
